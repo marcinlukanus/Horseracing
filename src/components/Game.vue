@@ -12,6 +12,12 @@
 
             <RulesModal class="ml-3" />
         </div>
+        <div
+            v-for="(horse, id) in horses"
+            :key=id
+        >
+            <img :src=horse.card />
+        </div>
     </div>
 </template>
 
@@ -29,15 +35,23 @@ export default {
     data: () => ({
         horses: {
             club: {
+                id: 0,
+                card: require('../assets/horses/ACEC.png'),
                 position: 0
             },
             diamond: {
+                id: 1,
+                card: require('../assets/horses/ACED.png'),
                 position: 0
             },
             heart: {
+                id: 2,
+                card: require('../assets/horses/ACEH.png'),
                 position: 0
             },
             spade: {
+                id: 3,
+                card: require('../assets/horses/ACES.png'),
                 position: 0
             }
         },
