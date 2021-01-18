@@ -4,7 +4,7 @@
 		<p>
 			<i>A drinking game created by Marcin Lukanus.</i>
 			<br>
-			<!-- <a href="https://github.com/marcinlukanus/RideTheBus" target="_blank" rel="noopener">GitHub Repo</a> -->
+			<a href="https://github.com/marcinlukanus/Horseracing" target="_blank" rel="noopener">GitHub Repo</a>
 		</p>
 	</div>
 </template>
