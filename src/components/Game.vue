@@ -282,7 +282,8 @@ export default {
                         windSpeedMax: 0,
                         particles: [
                             {
-                                size: 30
+                                type: 'rect',
+                                size: 15
                             },
                         ],
                     })
