@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-4">
             <b-button
                 v-if="!gameOver"
                 @click="generateSuit()"
@@ -9,15 +9,220 @@
             >
                 Draw Cards
             </b-button>
+            <b-button
+                v-else
+                @click="resetGame()"
+                variant="success"
+                class="mr-3"
+            >
+                Reset Game
+            </b-button>
 
             <RulesModal class="ml-3" />
         </div>
-        <div
-            v-for="(horse, id) in horses"
-            :key=id
-        >
-            <img :src=horse.card />
-        </div>
+
+        <b-row>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 0"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 1"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 2"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 3"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 4"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 5"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 6"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 7"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 8"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col> 
+            <b-col>
+                <div
+                    v-for="(horse, id) in horses"
+                    :key=id
+                    class="mb-2"
+                >
+                    <img
+                        v-if="horse.position === 9"
+                        height="100%"
+                        width="100%"
+                        :src=horse.card 
+                    />
+                    <div
+                        v-else
+                        height="100%"
+                        width="100%"
+                        class="fakeCard"
+                    />
+                </div>
+            </b-col>
+        </b-row>
     </div>
 </template>
 
@@ -68,7 +273,7 @@ export default {
                     title: `${suit.toUpperCase()}S WINS!`,
                     variant: 'success',
                     solid: true,
-                    toaster: 'b-toaster-top-center'
+                    toaster: 'b-toaster-bottom-center'
                 })
 
                 this.$confetti.start({
@@ -87,16 +292,23 @@ export default {
             let suit = this.suits[Math.floor(Math.random() * this.suits.length)]
 
             this.checkGameOver(suit)     
-            this.horses[suit].position++     
-
-            console.log('club: ' + this.horses.club.position)
-            console.log('diamond: ' + this.horses.diamond.position)
-            console.log('heart: ' + this.horses.heart.position)
-            console.log('spade: ' + this.horses.spade.position)
-            console.log('-----------------------')
-
-            // return this.horses[suit].position++
+            this.horses[suit].position++
+        },
+        resetGame() {
+            this.$confetti.stop()
+            this.gameOver = false
+            for (let suit in this.horses) {
+                this.horses[suit].position = 0
+            }
         }
     }
 }
 </script>
+
+<style scoped>
+    .fakeCard {
+        height: 122px;
+        width: 84px;
+        background-color: #22303f;
+    }
+</style>
